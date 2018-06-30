@@ -50,3 +50,9 @@ html {
 body {
   text-align: center;
 }
+
+.img_area {
+  max-width: 800px; /* 最大幅 */
+  min-width: 240px; /* 最小幅 */
+  text-align:center;
+}
