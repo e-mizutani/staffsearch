@@ -1,0 +1,12 @@
+<h1>ブログ詳細画面</h1>
+<div class="container">
+   <div class="blog-details">
+     <p>タイトル: <%= @blog.title %></p>
+     <p>内容: <%= @blog.content %></p>
+     <%= link_to '編集', edit_blog_path, class: 'btn btn-info' %>　　
+   </div>
+
+   <div class="blog-links">
+     <%= link_to '一覧へ戻る', blogs_path, class: 'btn btn-default' %>
+   </div>
+</div>
