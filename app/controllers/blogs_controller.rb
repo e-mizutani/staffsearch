@@ -23,6 +23,7 @@ class BlogsController < ApplicationController
     @blog = Blog.new(blog_params)
     @blog.user_id = current_user.id
     if @blog.save
+      ContactMailer.contact_mail(@blog).deliver
       redirect_to blogs_path
       else
       render 'new'
@@ -67,6 +68,10 @@ class BlogsController < ApplicationController
   def login_check
     unless current_user
       redirect_to new_session_path
+    end
+
+  def contact_params
+      params.require(:contact).permit(:name, :email, :content)
     end
   end
 end
