@@ -19,10 +19,17 @@
     <%= form.label :title %>
     <%= form.text_field :title %>
   </div>
+
   <div class="blog_title">
     <%= form.label :content %>
     <%= form.text_field :content %>
   </div>
+
+  <div class="blog_title">
+    <%= form.label :image %>
+    <%= form.file_field :image, id: :blog_image %>
+  </div>
+
 <button type="submit" class="btn btn-default">送信</button>
 <% end %>
 </div>

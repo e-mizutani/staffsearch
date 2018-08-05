@@ -53,11 +53,11 @@ class BlogsController < ApplicationController
   
   private
   def user_params
-    params.require(:user).permit(:name, :email, :password,
+    params.require(:user).permit(:name, :email, :password, :image, :image_cache,
                                  :password_confirmation)
   end
     def blog_params
-      params.require(:blog).permit(:title, :content)
+      params.require(:blog).permit(:title, :content, :image, :image_cache)
     end
 
     # idをキーとして値を取得するメソッド
@@ -71,7 +71,7 @@ class BlogsController < ApplicationController
     end
 
   def contact_params
-      params.require(:contact).permit(:name, :email, :content)
-    end
+      params.require(:contact).permit(:name, :email, :content, :image, :image_cache)
+  end
   end
 end

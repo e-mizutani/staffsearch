@@ -3,6 +3,7 @@
    <div class="blog-details">
      <p>タイトル: <%= @blog.title %></p>
      <p>内容: <%= @blog.content %></p>
+     <p>画像: <%= image_tag @blog.image %></p>
      <% if @blog.user == current_user %>
      <%= link_to '編集', edit_blog_path, class: 'btn btn-info' %>　
      <% end %>
