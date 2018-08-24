@@ -12,15 +12,15 @@
   <%= f.text_field :staff_add_cont %>
   <br />
   <%= f.label :skill_biz01_cont, '法人01' %>
-  <%= f.check_box(:skill_biz01_cont,{:checked=>false},"あり","なし") %>
+  <%= f.check_box(:skill_biz01_cont,{:checked=>false},"あり","") %>
   <%= f.label :skill_biz02_cont, '法人02' %>
-  <%= f.check_box(:skill_biz02_cont,{:checked=>false},"あり","なし") %>
+  <%= f.check_box(:skill_biz02_cont,{:checked=>false},"あり","") %>
   <%= f.label :skill_con01_cont, '個人01' %>
-  <%= f.check_box(:skill_con01_cont,{:checked=>false},"あり","なし") %>
+  <%= f.check_box(:skill_con01_cont,{:checked=>false},"あり","") %>
   <%= f.label :skill_con02_cont, '個人02' %>
-  <%= f.check_box(:skill_con02_cont,{:checked=>false},"あり","なし") %>
-  <%= f.label :skill_other_cont, '個人01' %>
-  <%= f.check_box(:skill_other_cont,{:checked=>false},"あり","なし") %>
+  <%= f.check_box(:skill_con02_cont,{:checked=>false},"あり","") %>
+  <%= f.label :skill_other_cont, '特殊案件' %>
+  <%= f.check_box(:skill_other_cont,{:checked=>false},"あり","") %>
   <div>
     <%= f.submit '検索する' %>
   </div>
