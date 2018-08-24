@@ -22,3 +22,8 @@ ja:
         password: "パスワード"
         password_confirmation: "確認用パスワード"
         remember_me: "ログインを記憶"
+      staff:
+        staff_name: "スタッフ名"
+        cheo_id: "チェオID"
+        staff_tel: "携帯番号"
+        staff_add: "住所"
