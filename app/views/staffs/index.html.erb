@@ -4,6 +4,27 @@
   <div id="new-staff-link">
     <%= link_to '新規スタッフ登録', new_staff_path, class: 'btn btn-default' %>
   </div>
+    <br />
+  <%= search_form_for @search do |f| %>
+  <%= f.label :staff_name_cont, 'スタッフ名' %>
+  <%= f.text_field :staff_name_cont %>
+  <%= f.label :staff_add_cont, '住所' %>
+  <%= f.text_field :staff_add_cont %>
+  <br />
+  <%= f.label :skill_biz01_cont, '法人01' %>
+  <%= f.check_box(:skill_biz01_cont,{:checked=>false},"あり","なし") %>
+  <%= f.label :skill_biz02_cont, '法人02' %>
+  <%= f.check_box(:skill_biz02_cont,{:checked=>false},"あり","なし") %>
+  <%= f.label :skill_con01_cont, '個人01' %>
+  <%= f.check_box(:skill_con01_cont,{:checked=>false},"あり","なし") %>
+  <%= f.label :skill_con02_cont, '個人02' %>
+  <%= f.check_box(:skill_con02_cont,{:checked=>false},"あり","なし") %>
+  <%= f.label :skill_other_cont, '個人01' %>
+  <%= f.check_box(:skill_other_cont,{:checked=>false},"あり","なし") %>
+  <div>
+    <%= f.submit '検索する' %>
+  </div>
+<% end %>
   <br />
   <div class="row">
     <% @staffs.each do |staff| %>

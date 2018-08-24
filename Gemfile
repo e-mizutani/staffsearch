@@ -33,7 +33,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'letter_opener_web'
 gem 'carrierwave'
 gem 'mini_magick'
-
+gem 'rails-i18n' # この行を追加(ransackには関係ないけどdate_select用)
+gem 'ransack'   # この行を追加
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

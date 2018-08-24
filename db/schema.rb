@@ -15,14 +15,6 @@ ActiveRecord::Schema.define(version: 20180822115321) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "blogs", force: :cascade do |t|
-    t.string "title"
-    t.text "content"
-    t.bigint "user_id"
-    t.text "image"
-    t.index ["user_id"], name: "index_blogs_on_user_id"
-  end
-
   create_table "favorites", force: :cascade do |t|
     t.integer "user_id"
     t.integer "staff_id"

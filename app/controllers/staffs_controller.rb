@@ -3,7 +3,9 @@ class StaffsController < ApplicationController
   before_action :login_check, only: [:new,:edit, :show]
   
   def index
-    @staffs = Staff.all
+    #@staffs = Staff.all
+    @search = Staff.search(params[:q]) # この行を追加
+    @staffs = @search.result #この行を修正
   end
 
   def new
