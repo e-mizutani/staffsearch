@@ -9,7 +9,11 @@
 
     
     <div class="col-xs-12">
-    <%= link_to 'ログイン', sessions_path, class: 'btn btn-default' %>
+      <% if logged_in? %>
+      <%=link_to 'スタッフ一覧', staffs_path, class: 'btn btn-default' %>
+       <% else %>
+      <%= link_to 'ログイン', sessions_path, class: 'btn btn-default' %>
+      <% end %>
       </p>
     </div>
   </div>
