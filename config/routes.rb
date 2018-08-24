@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
-  resources :feeds
-  resources :contacts
   get 'sessions/new'
 
-  get '/', to:'blogs#index'
-  resources :blogs do
+  get '/', to:'tops#index'
+  resources :staffs do
     collection do
       post :confirm
    end

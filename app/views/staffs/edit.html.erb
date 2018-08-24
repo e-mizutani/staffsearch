@@ -1,0 +1,76 @@
+<h1>スタッフ情報編集</h1>
+<div class="container">
+   <div class="staff-details">
+
+<%= form_with(model: @staff, local: true) do |form| %>
+  <% if @staff.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @staff.errors.count %>件のエラーがあります。</h2>
+      <ul>
+
+      <% @staff.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div>
+<table>
+  <tr>
+    <td><%= form.label :staff_name ,"スタッフ名" %></td>
+    <td colspan="5"><%= form.text_field :staff_name %></td>
+  </tr>
+  
+  <tr>
+    <td><%= form.label :cheo_id ,"スタッフID" %></td>
+    <td colspan="5"><%= form.text_field :cheo_id %></td>
+  </tr>
+
+  <tr>
+    <td><%= form.label :staff_tel, "携帯番号" %></td>
+    <td colspan="5"><%= form.text_field :staff_tel %></td>
+  </tr>
+
+  <tr>
+    <td><%= form.label :staff_add, "住所" %></td>
+    <td colspan="5"><%= form.text_field :staff_add %></td>
+  </tr>
+
+  <tr>
+    <td><%= form.label :skill_biz01, "対応スキル" %></td>
+    <td><%= hidden_field_tag 'staff[skill_biz01]', 'なし' %>
+　　    <%= check_box_tag 'staff[skill_biz01]', 'あり'  %>法人01</td>
+
+    <td><%= hidden_field_tag 'staff[skill_biz02]', 'なし' %>
+　　    <%= check_box_tag 'staff[skill_biz02]', 'あり'  %>法人02</td>
+
+    <td><%= hidden_field_tag 'staff[skill_con01]', 'なし' %>
+　　    <%= check_box_tag 'staff[skill_con01]', 'あり'  %>個人01</td>
+
+    <td><%= hidden_field_tag 'staff[skill_con02]', 'なし' %>
+　　    <%= check_box_tag 'staff[skill_con02]', 'あり'  %>個人02</td>
+
+    <td><%= hidden_field_tag 'staff[skill_other]', 'なし' %>
+　　    <%= check_box_tag 'staff[skill_other]', 'あり'  %>特殊案件</td>
+  </tr>
+
+  <tr>
+    <td><%= form.label :image %></td>
+    <td colspan="5"><center><%= form.file_field :image, id: :image %></center></td>
+  </tr>
+
+  <tr>
+    <td colspan="6"><button type="submit" class="btn btn-default">送信</button></td>
+  </tr>
+  </table>
+  </div>
+
+<% end %>
+</div>
+</div>
+
+   <div class="staff-links">
+     <%= link_to '一覧へ戻る', staffs_path, class: 'btn btn-default' %>
+   </div>
+

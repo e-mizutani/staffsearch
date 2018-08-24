@@ -1,0 +1,70 @@
+<h3>以下の内容で、送信する。</h3>
+<div class="container">
+   <div class="staff-details">
+
+<%= form_with(model: @staff, url: staffs_path, local: true) do |form| %>
+
+  <%= form.hidden_field :staff_name %>
+  <%= form.hidden_field :cheo_id %>
+  <%= form.hidden_field :staff_tel %>
+  <%= form.hidden_field :staff_add %>
+  <%= form.hidden_field :skill_biz01 %>
+  <%= form.hidden_field :skill_biz02 %>
+  <%= form.hidden_field :skill_con01 %>
+  <%= form.hidden_field :skill_con02 %>
+  <%= form.hidden_field :skill_other %>
+ <div class="staff_title">
+<div>
+<table>
+  <p><%= image_tag(@staff.image) %>  <%= @staff.image %></p>
+  <%= form.hidden_field :image_cache %>
+  <tr>
+    <td>スタッフ名</td>
+    <td colspan="5"><%= @staff.staff_name %></td>
+  </tr>
+  
+  <tr>
+    <td>スタッフID</td>
+    <td colspan="5"><%= @staff.cheo_id %></td>
+  </tr>
+
+  <tr>
+    <td>携帯番号</td>
+    <td colspan="5"><%= @staff.staff_tel %></td>
+  </tr>
+
+  <tr>
+    <td>住所</td>
+    <td colspan="5"><%= @staff.staff_add %></td>
+  </tr>
+
+  <tr>
+    <td>対応スキル</td>
+    <td>法人01：<%= @staff.skill_biz01 %></td>
+    <td>法人02：<%= @staff.skill_biz02 %></td>
+    <td>個人01：<%= @staff.skill_con01 %></td>
+    <td>個人02：<%= @staff.skill_con02 %></td>
+    <td>特殊案件：<%= @staff.skill_other %></td>
+  </tr>
+  
+  <tr>
+    <td colspan="6"><button type="submit" class="btn btn-default">登録する</button></td>
+  </tr>
+<% end %>
+</table>
+</div>
+  <%= form_with(model: @staff, url: new_staff_path, local: true, method: 'get') do |form| %>
+  <%= form.hidden_field :staff_name %>
+  <%= form.hidden_field :cheo_id %>
+  <%= form.hidden_field :staff_tel %>
+  <%= form.hidden_field :staff_add %>
+  <%= form.hidden_field :skill_biz01 %>
+  <%= form.hidden_field :skill_biz02 %>
+  <%= form.hidden_field :skill_con01 %>
+  <%= form.hidden_field :skill_con02 %>
+  <%= form.hidden_field :skill_other %>
+  <button type="submit" class="btn btn-default">戻る</button>
+<% end %>
+   </div>
+   </div>
+</div>

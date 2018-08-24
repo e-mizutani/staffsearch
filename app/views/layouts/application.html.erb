@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>blog</title>
+  <title>StaffSearch</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -11,28 +11,24 @@
   <header>
     <ul>
       <li class="homeBtn"><a href="/">HOME</a></li>
-      <li><%=link_to "一覧",blogs_path %></li>
+      <% if logged_in? %>
+      <li><%=link_to "スタッフ一覧",staffs_path %></li>
+      <li><%= link_to "個人ページ", user_path(current_user.id) %></li>
+      <li><%= link_to "ログアウト", session_path(current_user.id), method: :delete %></li>
+       <% else %>
+      <li><%= link_to "アカウント登録", new_user_path %></li>
+      <% end %>
     </ul>
   </header>
 
       <% flash.each do |key, value| %>
       <%= content_tag(:div, value, class: "#{key} message") %>
       <% end %>
-      
-      <div class="loginBtn">
-       <% if logged_in? %>
-         <%= link_to "プロフィール", user_path(current_user.id) %>
-         <%= link_to "ログアウト", session_path(current_user.id), method: :delete %>
-       <% else %>
-         <%= link_to "新規登録", new_user_path %>
-         <%= link_to "ログイン", new_session_path %>
-       <% end %>
-      </div>
+
       <%= yield %>
 
   <footer>
-    <p>201801期 Mizutani Eiji</p>
-    <p>© 2018 Copyright NTT ComCheo Corp.</p>
+    <p>201801期 Mizutani Eiji　2018 Copyright NTT ComCheo Corp.</p>
   </footer>
 
 </body>

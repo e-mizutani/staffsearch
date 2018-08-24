@@ -1,10 +1,19 @@
-<h1><%= @user.name %>のページ</h1>
+<h1><%= @user.name %>の詳細画面</h1>
 
 <p>メールアドレス: <%= @user.email %></p>
-<p>イメージ: <%= image_tag @user.image %></p>
 
-<ul>
-<% @favorites_blog.each do |blog| %>
-<li>お気に入り：<%= link_to "#{blog.content}", blog_path(blog.id) %></li>
-<% end %>
-</ul>
+
+<div>
+    <table border="1">
+    <th><center>スタッフ名</center></th>
+    <th><center>住所</center></th>
+    <th><center>携帯番号</center></th>
+    <% @favorites_staff.each do |staff| %>
+    <tr>
+    <td width="100" height="20"><%= link_to "#{staff.staff_name}",staff_path(staff.id) %></td>
+    <td width="300" height="20"><%= "#{staff.staff_add}" %></td>
+    <td width="200" height="20"><%= "#{staff.staff_tel}" %></td>
+    </tr>
+    <% end %>
+    </table>
+</div>

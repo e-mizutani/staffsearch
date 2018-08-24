@@ -6,13 +6,13 @@ default: &default
 
 development:
   <<: *default
-  database: bootstrap_development
+  database: staffsearch_development
 test:
   <<: *default
-  database: bootstrap_test
+  database: staffsearch_test
 
 production:
   <<: *default
-  database: bootstrap_production
-  username: bootstrap
-  password: <%= ENV['bootstrap_DATABASE_PASSWORD'] %>
+  database: staffsearch_production
+  username: staffsearch
+  password: <%= ENV['staffsearch_DATABASE_PASSWORD'] %>

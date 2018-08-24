@@ -1,0 +1,33 @@
+<h1>スタッフ一覧</h1>
+
+<div class="container">
+  <div id="new-staff-link">
+    <%= link_to '新規スタッフ登録', new_staff_path, class: 'btn btn-default' %>
+  </div>
+  <br />
+  <div class="row">
+    <% @staffs.each do |staff| %>
+      <div class="col-xs-12 col-md-6 staff-panel">
+        <div>
+          <table border="1">
+            
+            <th><center>スタッフ名</center></th>
+            <th><center>住所</center></th>
+            <th colspan="3"><center>操作</center></th>
+            
+            <tr>
+              <td width="100" height="20"><%= staff.staff_name %></td>
+              <td width="200" height="20"><%= staff.staff_add %></td>
+              <div class="staff-links">
+                <td><%= link_to '詳細', staff, class: 'btn btn-default' %></td>
+                <td><%= link_to '編集', edit_staff_path(staff), class: 'btn btn-info' %></td>
+                <td><%= link_to '削除', staff, method: :delete, data: { confirm: '本当に削除しますか' }, class: 'btn btn-danger' %></td>
+
+            <tr>
+              </div>
+          </table>
+        </div>
+      </div>
+      <% end %>
+  </div>
+</div>
